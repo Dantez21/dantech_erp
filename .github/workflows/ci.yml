@@ -89,11 +89,13 @@ jobs:
       - name: Install
         working-directory: /home/runner/frappe-bench
         run: |
-          bench get-app dantech_erp $GITHUB_WORKSPACE
-          bench setup requirements --dev
-          bench new-site --db-root-password root --admin-password admin test_site
-          bench --site test_site install-app dantech_erp
-          bench build
+         bench get-app --branch version-15 erpnext https://github.com/frappe/erpnext.git
+         bench get-app dantech_erp $GITHUB_WORKSPACE
+         bench setup requirements --dev
+         bench new-site --db-root-password root --admin-password admin test_site
+         bench --site test_site install-app erpnext
+         bench --site test_site install-app dantech_erp
+         bench build
         env:
           CI: 'Yes'
 
