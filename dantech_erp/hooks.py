@@ -20,6 +20,13 @@ doc_events = {
 
 required_apps = ["erpnext"]
 
+fixtures = [
+    {
+        "doctype": "Warehouse Type",
+        "filters": [["name", "in", ["Transit", "Stores", "Work In Progress", "Finished Goods"]]],
+    }
+]
+
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
