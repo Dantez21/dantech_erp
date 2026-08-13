@@ -1,41 +1,98 @@
-### Dantech ERP
+# Dantech ERP
 
-Enterprise Resource Planning Platform by Dantech Technologies Ltd
+A learning and portfolio project built with the **Frappe Framework** and **ERPNext**.
 
-### Installation
+Dantech ERP is an experimental Enterprise Resource Planning platform developed to explore Frappe application development, ERPNext customization, business workflows, custom DocTypes, server-side Python, client-side JavaScript, automated testing, and Git/GitHub development workflows.
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+> **Project status:** Active learning and development  
+> **Project type:** Frappe Framework custom application  
+> **Repository:** https://github.com/Dantez21/dantech_erp
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app dantech_erp
-```
+---
 
-### Contributing
+## Features
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+### Intercompany Order Management
 
-```bash
-cd apps/dantech_erp
-pre-commit install
-```
+Custom functionality for managing orders between companies.
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+The project currently includes:
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+- Intercompany Order DocType
+- Intercompany Order Item child table
+- Order details
+- Approval workflow fields
+- Delivery information
+- Financial summary
+- Custom server-side Python logic
+- Client-side JavaScript customization
+- Automated test structure
 
-### CI
+---
 
-This app can use GitHub Actions for CI. The following workflows are configured:
+### Livestock Management
 
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
+The project also contains a custom Livestock module developed while learning how to extend ERPNext for livestock and agricultural operations.
 
+Current functionality includes:
 
-### License
+- Livestock application module
+- Animal Record customizations
+- Animal list view customization
+- JavaScript-based list filtering
+- Livestock event handling
 
-mit
+---
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Frappe Framework | Application framework |
+| ERPNext | ERP platform |
+| Python | Backend development |
+| JavaScript | Client-side customization |
+| MariaDB | Database |
+| Redis | Caching and background jobs |
+| Git | Version control |
+| GitHub | Source-code hosting |
+| GitHub Actions | Continuous Integration |
+| Ruff | Python linting |
+| ESLint | JavaScript linting |
+| Prettier | Code formatting |
+| PyUpgrade | Python modernization |
+| Pre-commit | Development hooks |
+
+---
+
+## Project Structure
+
+```text
+dantech_erp/
+│
+├── dantech_erp/
+│   ├── config/
+│   ├── dantech_erp/
+│   │   └── doctype/
+│   │       ├── intercompany_order/
+│   │       └── intercompany_order_item/
+│   │
+│   ├── livestock/
+│   │   └── events.py
+│   │
+│   ├── public/
+│   │   └── js/
+│   │       └── animal_record_list.js
+│   │
+│   ├── api.py
+│   ├── hooks.py
+│   └── modules.txt
+│
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       └── linter.yml
+│
+├── README.md
+├── license.txt
+└── pyproject.toml
