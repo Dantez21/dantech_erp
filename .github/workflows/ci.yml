@@ -95,6 +95,11 @@ jobs:
          bench new-site --db-root-password root --admin-password admin test_site
          bench --site test_site install-app erpnext
          bench --site test_site install-app dantech_erp
+         bench --site test_site migrate
+         bench --site test_site console <<'PY'
+         import frappe
+         print("Warehouse Type Transit:", frappe.db.exists("Warehouse Type", "Transit"))
+         PY
          bench build
         env:
           CI: 'Yes'
