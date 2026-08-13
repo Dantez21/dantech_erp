@@ -3,5 +3,7 @@
 *.egg-info
 *.swp
 tags
-node_modules
-__pycache__
+node_modules/
+__pycache__/
+.env
+.venv/

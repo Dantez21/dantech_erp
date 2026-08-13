@@ -5,6 +5,16 @@ app_description = "Enterprise Resource Planning Platform by Dantech Technologies
 app_email = "wambuadaniel21@gmail.com"
 app_license = "mit"
 
+# Include List View JavaScript
+doctype_list_js = {
+    "Animal Record": "public/js/animal_record_list.js"
+}
+
+doc_events = {
+    "Animal Slaughter Record": {
+        "on_submit": "dantech_erp.livestock.events.update_animal_status"
+    }
+}
 # Apps
 # ------------------
 
